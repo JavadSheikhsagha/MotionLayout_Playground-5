@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/constSet_lineList_remove" >
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/const_lineListRvItem_Card"
+            android:layout_marginEnd="72dp"
+            android:layout_marginStart="-56dp" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/constSet_lineList_remove"
+        android:id="@+id/tran_lineList_showRemove"
+        motion:motionInterpolator="easeInOut"
+        motion:duration="700" >
+        <OnSwipe motion:dragDirection="dragStart"
+            motion:onTouchUp="autoComplete" />
+    </Transition>
+    <ConstraintSet android:id="@+id/constSet_lineList_add" >
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/const_lineListRvItem_Card"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="-56dp" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/constSet_lineList_add"
+        motion:motionInterpolator="easeInOut"
+        android:id="@+id/tran_lineList_showAdd"
+        motion:duration="700" >
+        <OnSwipe motion:dragDirection="dragEnd"
+            motion:onTouchUp="autoComplete" />
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/constSet_lineList_add"
+        motion:constraintSetEnd="@+id/start"
+        motion:motionInterpolator="easeInOut"
+        motion:duration="700"
+        android:id="@+id/tran_lineList_hideAdd" >
+        <OnSwipe motion:dragDirection="dragStart"
+            motion:onTouchUp="autoComplete" />
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/constSet_lineList_remove"
+        motion:constraintSetEnd="@+id/start"
+        motion:motionInterpolator="easeInOut"
+        motion:duration="700"
+        android:id="@+id/tran_lineList_hideRemove" >
+        <OnSwipe motion:dragDirection="dragEnd"
+            motion:onTouchUp="autoComplete" />
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/constSet_lineList_remove"
+        motion:constraintSetEnd="@+id/start"
+        android:id="@+id/tran_lineList_reseter"
+        motion:duration="1" />
+</MotionScene>
