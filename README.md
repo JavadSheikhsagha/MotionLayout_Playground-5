@@ -11,7 +11,7 @@ Card animation for cycling through a recyclerview and edit or remove an item or 
    
 ## Preview
 [https://gifyu.com/image/tiz2]
-![Alt Text](https://github.com/JavadSheikhsagha/MotionLayout-Playground-4/blob/main/20210622_203841.gif)
+![Alt Text](https://github.com/JavadSheikhsagha/MotionLayout_Playground5/blob/main/20210811_004331.gif)
 
 ### How it works? 
 sir.hxt@gmail.com
